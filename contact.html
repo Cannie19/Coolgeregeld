@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact — Airco Offerte Aanvragen | Coolgeregeld Utrecht</title>
+  <meta name="description" content="Neem contact op met Coolgeregeld voor een gratis offerte, onderhoud of storingsmelding. We reageren binnen 24 uur. Bel, app of mail ons.">
+  <link rel="canonical" href="https://www.coolgeregeld.nl/contact.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.coolgeregeld.nl/contact.html">
+  <meta property="og:title"       content="Contact — Airco Offerte Aanvragen | Coolgeregeld Utrecht">
+  <meta property="og:description" content="Neem contact op voor een gratis offerte of storingsmelding. Coolgeregeld reageert binnen 24 uur.">
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1200">
+
+  <!-- Structured Data: ContactPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Coolgeregeld",
+    "description": "Contactpagina van Coolgeregeld — erkend airco installateur in Utrecht",
+    "url": "https://www.coolgeregeld.nl/contact.html",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Coolgeregeld",
+      "telephone": "<!-- CLIENT: vul in -->",
+      "email": "info@coolgeregeld.nl",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Utrecht",
+        "addressCountry": "NL"
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    .form-feedback {
+      padding: var(--s4) var(--s5);
+      border-radius: var(--r-md);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      margin-top: var(--s2);
+    }
+    .form-feedback--success {
+      background: #f0fdf4;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+    .form-feedback--error {
+      background: #fff7f5;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+  </style>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <header class="nav" role="banner">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Coolgeregeld — naar homepage">
+        <img src="Coolgeregeld.png" alt="Coolgeregeld logo" width="160" height="44">
+      </a>
+      <nav class="nav__links" aria-label="Hoofdnavigatie">
+        <a href="index.html">Home</a>
+        <a href="diensten.html">Diensten</a>
+        <a href="merken.html">Merken</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__right">
+        <a href="tel:+31600000000" class="nav__phone" aria-label="Bel ons">
+          <i data-lucide="phone" aria-hidden="true"></i>
+          +31 (0)6 XX XX XX XX
+        </a>
+        <a href="contact.html" class="btn btn--primary btn--sm nav__cta">Offerte aanvragen</a>
+        <button class="nav__burger" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav id="mobile-nav" class="nav__mobile" aria-label="Mobiele navigatie">
+    <a href="index.html">Home</a>
+    <a href="diensten.html">Diensten</a>
+    <a href="merken.html">Merken</a>
+    <a href="over-ons.html">Over ons</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:+31600000000" class="nav__mobile-phone">
+      <i data-lucide="phone" aria-hidden="true"></i>
+      +31 (0)6 XX XX XX XX
+    </a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero hero--page" aria-label="Contact hero">
+      <img src="contact-hero.jpg" alt="Vriendelijk contact met Coolgeregeld" class="hero__bg" loading="eager" style="object-position: center 30%;">
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <h1 class="hero__title">Vraag vrijblijvend een offerte aan</h1>
+        <p class="hero__subtitle">Bel, app of mail ons. We reageren binnen 24 uur.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTIE -->
+    <section class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- FORMULIER -->
+          <div>
+            <div class="reveal" style="margin-bottom: var(--s8);">
+              <h2 id="contact-heading">Stuur ons een bericht</h2>
+              <p style="color: var(--ink-muted); margin-top: var(--s3);">Vul het formulier in, dan nemen we zo snel mogelijk contact met u op. Verwachte reactietijd: binnen 24 uur.</p>
+            </div>
+
+            <!-- ACTION: vervang REPLACE met uw Formspree ID -->
+            <form
+              action="https://formspree.io/f/REPLACE"
+              method="POST"
+              class="form js-contact-form reveal"
+              novalidate
+              aria-label="Contactformulier"
+            >
+              <!-- Honeypot veld tegen spam -->
+              <div class="form-group form-group--honeypot" aria-hidden="true">
+                <label for="website">Website</label>
+                <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="naam">Naam <span aria-hidden="true">*</span></label>
+                  <input
+                    type="text"
+                    id="naam"
+                    name="naam"
+                    placeholder="Uw naam"
+                    required
+                    autocomplete="name"
+                    aria-required="true"
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="email">E-mailadres <span aria-hidden="true">*</span></label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="naam@voorbeeld.nl"
+                    required
+                    autocomplete="email"
+                    aria-required="true"
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="telefoon">Telefoonnummer</label>
+                <input
+                  type="tel"
+                  id="telefoon"
+                  name="telefoon"
+                  placeholder="+31 6 XX XX XX XX"
+                  autocomplete="tel"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="onderwerp">Onderwerp <span aria-hidden="true">*</span></label>
+                <select id="onderwerp" name="onderwerp" required aria-required="true">
+                  <option value="" disabled selected>Kies een onderwerp</option>
+                  <option value="Nieuwe installatie">Nieuwe installatie</option>
+                  <option value="Onderhoud">Onderhoud</option>
+                  <option value="Storing">Storing</option>
+                  <option value="Offerte">Offerte</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="bericht">Bericht <span aria-hidden="true">*</span></label>
+                <textarea
+                  id="bericht"
+                  name="bericht"
+                  placeholder="Beschrijf uw vraag of situatie..."
+                  required
+                  aria-required="true"
+                  rows="5"
+                ></textarea>
+              </div>
+
+              <div>
+                <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">
+                  Verstuur bericht
+                </button>
+                <p class="js-form-feedback" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+          </div>
+
+          <!-- CONTACT INFO -->
+          <div class="contact-info">
+
+            <!-- Gegevens -->
+            <div class="contact-card reveal">
+              <h3>Contactgegevens</h3>
+              <div class="contact-item">
+                <div class="contact-item__icon" aria-hidden="true">
+                  <i data-lucide="phone"></i>
+                </div>
+                <div>
+                  <span class="contact-item__label">Telefoon</span>
+                  <!-- CLIENT: vul telefoonnummer in -->
+                  <a href="tel:+31600000000">+31 (0)6 XX XX XX XX</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item__icon" aria-hidden="true">
+                  <i data-lucide="mail"></i>
+                </div>
+                <div>
+                  <span class="contact-item__label">E-mail</span>
+                  <a href="mailto:info@coolgeregeld.nl">info@coolgeregeld.nl</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item__icon" aria-hidden="true">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div>
+                  <span class="contact-item__label">Adres</span>
+                  <!-- CLIENT: vul adres in -->
+                  <span style="font-weight: 600; color: var(--ink);">Utrecht, Nederland</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Openingstijden -->
+            <div class="contact-card reveal">
+              <h3>Openingstijden</h3>
+              <div class="openingstijden" role="list">
+                <div class="openingstijden-row" role="listitem">
+                  <span>Maandag t/m vrijdag</span>
+                  <span>08:00 – 17:30</span>
+                </div>
+                <div class="openingstijden-row" role="listitem">
+                  <span>Zaterdag</span>
+                  <span>Op afspraak</span>
+                </div>
+                <div class="openingstijden-row" role="listitem">
+                  <span>Zondag</span>
+                  <span>Gesloten</span>
+                </div>
+              </div>
+              <p style="font-size: var(--text-xs); color: var(--ink-muted); margin-top: var(--s4);">
+                Spoed buiten kantoortijden? Stuur een WhatsApp-bericht, we reageren zo snel mogelijk.
+              </p>
+            </div>
+
+            <!-- WhatsApp CTA -->
+            <div class="wa-cta-block reveal">
+              <div class="wa-cta-block__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              </div>
+              <div>
+                <h4>WhatsApp ons</h4>
+                <!-- CLIENT: vul WhatsApp nummer in -->
+                <p>Stuur een bericht via WhatsApp voor een snelle reactie.</p>
+                <a
+                  href="https://wa.me/31600000000?text=Hallo%2C%20ik%20heb%20een%20vraag%20over%20airco%20installatie."
+                  class="btn btn--sm"
+                  style="margin-top: var(--s3); background: var(--green-wa); color: white; border: none; display: inline-flex;"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open WhatsApp
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" aria-label="Coolgeregeld homepage"><img src="Coolgeregeld.png" alt="Coolgeregeld" width="160" height="44"></a>
+          <p class="footer__tagline">Erkend airco installateur in Utrecht, actief door heel Nederland.</p>
+          <div class="footer__contact">
+            <a href="tel:+31600000000"><i data-lucide="phone" aria-hidden="true"></i>+31 (0)6 XX XX XX XX</a>
+            <a href="mailto:info@coolgeregeld.nl"><i data-lucide="mail" aria-hidden="true"></i>info@coolgeregeld.nl</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__nav-heading">Navigatie</p>
+          <ul class="footer__nav-list" role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="diensten.html">Diensten</a></li>
+            <li><a href="merken.html">Merken</a></li>
+            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__nav-heading">Diensten</p>
+          <ul class="footer__nav-list" role="list">
+            <li><a href="diensten.html#installatie">Airco installatie</a></li>
+            <li><a href="diensten.html#onderhoud">Periodiek onderhoud</a></li>
+            <li><a href="diensten.html#storing">Storingsdienst</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Coolgeregeld &mdash; KvK: XXXXXXXX &mdash; BTW: NLXXXXXXXXX</p>
+        <nav class="footer__legal" aria-label="Juridische links"><a href="privacy.html">Privacybeleid</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/31600000000?text=Hallo%2C%20ik%20heb%20een%20vraag%20over%20airco%20installatie." class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Stuur ons een WhatsApp bericht">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>

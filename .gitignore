@@ -1,0 +1,36 @@
+node_modules/
+temporary screenshots/
+.env
+.DS_Store
+Thumbs.db
+
+# Raw YouTube downloads
+yt_*.mp4
+yt_*.m4a
+yt_*.jpg
+yt_*.f137.mp4
+yt_*.f140.m4a
+yt_*.f399.mp4
+
+# Raw airco download source files
+airco-raw.*
+
+# FFmpeg working files
+clip1.mp4
+clip2.mp4
+clip3.mp4
+concat.txt
+
+# Large unused source videos
+pex_*.mp4
+pex_*.jpg
+test-video.mp4
+video-airco-wall.mp4
+
+# Preview thumbnails (ffmpeg output)
+preview*.jpg
+
+# Project/tool scripts not needed for deployment
+screenshot.mjs
+CLAUDE_Website.md
+PRODUCT.md
