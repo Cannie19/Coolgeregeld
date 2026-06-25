@@ -419,7 +419,7 @@ input, select, textarea { font: inherit; }
 .hbb-tag svg { width: 11px; height: 11px; }
 
 /* ── AFO Strip ───────────────────────────────────────────── */
-.afo-strip { background: #fff; border-bottom: 1px solid var(--border); padding: var(--s6) 0; }
+.afo-strip { background: #fff; border-bottom: 1px solid var(--border); padding: var(--s6) 0; position: relative; z-index: 2; }
 .afo-strip__inner { display: flex; align-items: center; gap: var(--s8); flex-wrap: wrap; }
 .afo-block { flex: 1; min-width: 180px; }
 .afo-divider { width: 1px; height: 70px; background: var(--border); flex-shrink: 0; }
@@ -1186,13 +1186,13 @@ button.ac-row:hover { background: rgba(0,0,0,0.03); border-radius: 6px; }
 /* ── Hero v2 (full-width photo background) ────────────────── */
 .hero-v2 {
   position: relative;
-  min-height: calc(100svh - 100px); /* 100px = afo-strip hoogte */
-  display: flex;
-  align-items: center;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: 1fr auto; /* hero-inhoud groeit, strip blijft onderaan */
   overflow: hidden;
   margin-top: -110px; /* pull hero behind sticky nav so nav can be transparent */
 }
-@media (min-width: 640px) { .hero-v2 { min-height: calc(100svh - 140px); } } /* 140px = topbar 40px + strip 100px */
+.hero-v2__inner { align-self: center; }
 .hero-v2__bg { position: absolute; inset: 0; z-index: 0; }
 .hero-v2__bg img {
   position: absolute;
@@ -1208,7 +1208,7 @@ button.ac-row:hover { background: rgba(0,0,0,0.03); border-radius: 6px; }
   position: absolute; inset: 0;
   background: linear-gradient(105deg, rgba(5,10,22,0.94) 0%, rgba(5,10,22,0.78) 50%, rgba(5,10,22,0.35) 100%);
 }
-.hero-v2__inner { position: relative; z-index: 1; padding: calc(var(--s20) + 110px) 0 var(--s20); }
+.hero-v2__inner { position: relative; z-index: 1; padding: calc(var(--s20) + 110px) 0 var(--s10); align-self: center; }
 .hero-v2__text { max-width: 580px; }
 .hero-v2__eyebrow {
   display: inline-block;
