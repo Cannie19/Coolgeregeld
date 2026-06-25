@@ -419,7 +419,7 @@ input, select, textarea { font: inherit; }
 .hbb-tag svg { width: 11px; height: 11px; }
 
 /* ── AFO Strip ───────────────────────────────────────────── */
-.afo-strip { background: #fff; border-bottom: 1px solid var(--border); padding: var(--s6) 0; }
+.afo-strip { background: #fff; border-bottom: 1px solid var(--border); padding: var(--s6) 0; position: sticky; top: 110px; z-index: 90; }
 .afo-strip__inner { display: flex; align-items: center; gap: var(--s8); flex-wrap: wrap; }
 .afo-block { flex: 1; min-width: 180px; }
 .afo-divider { width: 1px; height: 70px; background: var(--border); flex-shrink: 0; }
