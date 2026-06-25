@@ -894,27 +894,41 @@
        ====================================================== -->
   <div class="promo-overlay hidden" id="promoOverlay" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
     <div class="promo-popup">
-      <div class="promo-popup__header">
-        <button class="promo-popup__close" id="promoClose" aria-label="Sluiten">✕</button>
-        <div class="promo-popup__tag">🔥 Zomer aanbieding</div>
-        <h2 class="promo-popup__title" id="promoTitle">Airco inclusief<br>installatie</h2>
-        <p class="promo-popup__subtitle">Beperkte voorraad bestel vandaag, binnen een week klaar</p>
+      <button class="promo-popup__close" id="promoClose" aria-label="Sluiten">✕</button>
+
+      <!-- Flashy banner -->
+      <div class="promo-popup__banner">
+        <span class="promo-popup__banner-label">☀️ Zomer actie</span>
+        <strong class="promo-popup__banner-title" id="promoTitle">AANBIEDING!</strong>
+        <p class="promo-popup__banner-sub">LG WiFi Pro · 3,5 kW split unit airco</p>
       </div>
-      <div class="promo-popup__body">
-        <p class="promo-popup__product"><span>LG WiFi Pro</span> 3,5 kW split unit</p>
-        <div class="promo-popup__pricing">
-          <span class="promo-popup__was">€1.600</span>
-          <div>
-            <div class="promo-popup__now"><sup>€</sup>1.250<sup>,-</sup></div>
-          </div>
+
+      <!-- Product image — full-width hero -->
+      <div class="promo-popup__img-hero">
+        <img src="lg-wifi-pro-removebg.png" alt="LG WiFi Pro 3,5 kW split unit">
+        <div class="promo-popup__energy-badge">Energielabel A+++</div>
+      </div>
+
+      <!-- Pricing row -->
+      <div class="promo-popup__pricing-row">
+        <div class="promo-popup__pricing-left">
+          <div class="promo-popup__was-row">VAN <s>€1.600,-</s></div>
+          <div class="promo-popup__incl-badge">🔧 Incl. montage</div>
+          <div class="promo-popup__incl-badge">📶 Incl. WiFi</div>
         </div>
-        <p class="promo-popup__incl"><strong>Inclusief standaard montage</strong> WiFi, 2 jaar garantie</p>
-        <div class="promo-popup__features">
-          <div class="promo-popup__feature">Geschikt voor ruimtes tot ca. 35 m²</div>
-          <div class="promo-popup__feature">WiFi-bediening via LG ThinQ app</div>
-          <div class="promo-popup__feature">Koelt én verwarmt energielabel A+++</div>
-          <div class="promo-popup__feature">Installatie binnen één week ingepland</div>
+        <div class="promo-popup__pricing-right">
+          <div class="promo-popup__now-label">NU VOOR</div>
+          <div class="promo-popup__now-price"><sup>€</sup>1.250<sup>,-</sup></div>
         </div>
+      </div>
+
+      <!-- Credibility strip -->
+      <div class="promo-popup__strip">
+        ✓ Installatie binnen 1 week &nbsp;·&nbsp; ✓ 2 jaar garantie &nbsp;·&nbsp; ✓ STEK gecertificeerd
+      </div>
+
+      <!-- CTA -->
+      <div class="promo-popup__actions">
         <a href="contact.html" class="promo-popup__cta">Profiteer van deze aanbieding →</a>
         <button class="promo-popup__dismiss" id="promoDismiss">Nee bedankt, ik sluit dit</button>
       </div>

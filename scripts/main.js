@@ -179,7 +179,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }, { passive: true });
 })();
 
-// Contact form (Formspree)
+// Contact form (Web3Forms)
 const form = document.querySelector('.js-contact-form');
 if (form) {
   const feedback = form.querySelector('.js-form-feedback');
@@ -188,18 +188,27 @@ if (form) {
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
     btn.textContent = 'Verzenden…';
+    feedback.textContent = '';
+    feedback.className = 'js-form-feedback';
     try {
-      const res = await fetch(form.action, {
+      const data = Object.fromEntries(new FormData(form));
+      // Dynamisch subject met naam
+      data.subject = `Offerte aanvraag van ${data.naam || 'onbekend'} via coolgeregeld.nl`;
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
       });
-      if (res.ok) {
+      const result = await res.json();
+      if (result.success) {
         feedback.textContent = '✓ Bericht ontvangen. We nemen binnen 24 uur contact op.';
         feedback.className = 'js-form-feedback form-feedback form-feedback--success';
         form.reset();
       } else {
-        throw new Error();
+        throw new Error(result.message);
       }
     } catch {
       feedback.textContent = '⚠ Er ging iets mis. Stuur een e-mail naar info@coolgeregeld.nl';

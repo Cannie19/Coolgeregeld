@@ -24,8 +24,20 @@ const mime = {
 
 const server = createServer(async (req, res) => {
   const url = decodeURIComponent(req.url.split('?')[0]);
-  let filePath = join(__dirname, url === '/' ? 'index.html' : url);
 
+  // API route: contact form
+  if (url === '/api/contact' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      console.log('[dev] Contact form submission:', body);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true }));
+    });
+    return;
+  }
+
+  let filePath = join(__dirname, url === '/' ? 'index.html' : url);
   if (!extname(filePath)) filePath += '.html';
 
   try {

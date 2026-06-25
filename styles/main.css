@@ -978,86 +978,147 @@ button.ac-row:hover { background: rgba(0,0,0,0.03); border-radius: 6px; }
 
 /* ── Promo Popup ─────────────────────────────────────────── */
 .promo-overlay {
-  position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+  position: fixed; inset: 0; background: rgba(0,0,0,0.65);
   z-index: 9000; display: flex; align-items: center; justify-content: center;
   padding: var(--s4);
   animation: fadeIn 0.3s ease;
 }
 .promo-overlay.hidden { display: none; }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes popIn { from { opacity:0; transform:scale(0.85); } to { opacity:1; transform:scale(1); } }
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 16px rgba(249,115,22,0.45); }
+  50%       { box-shadow: 0 4px 28px rgba(249,115,22,0.75); }
+}
+
 .promo-popup {
   background: white; border-radius: 16px; overflow: hidden;
   max-width: 420px; width: 100%;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.45);
   position: relative;
   animation: popIn 0.35s cubic-bezier(0.34,1.56,0.64,1);
 }
-@keyframes popIn { from { opacity:0; transform:scale(0.85); } to { opacity:1; transform:scale(1); } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-.promo-popup__header {
-  background: linear-gradient(135deg, #1a54d2 0%, #0d2f8c 100%);
-  padding: var(--s5) var(--s6) var(--s4);
-  color: white; text-align: center; position: relative;
-}
-.promo-popup__tag {
-  background: #f97316; color: white; font-size: 0.7rem; font-weight: 800;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: var(--s2);
-}
-.promo-popup__title {
-  font-size: 1.5rem; font-weight: 900; line-height: 1.2; margin: 0;
-}
-.promo-popup__subtitle {
-  font-size: 0.85rem; opacity: 0.85; margin-top: 4px;
-}
+
+/* Close button */
 .promo-popup__close {
-  position: absolute; top: 12px; right: 12px;
-  background: rgba(255,255,255,0.2); border: none; cursor: pointer;
-  width: 32px; height: 32px; border-radius: 50%;
+  position: absolute; top: 10px; right: 10px; z-index: 10;
+  background: rgba(0,0,0,0.3); border: 2px solid rgba(255,255,255,0.5);
+  cursor: pointer; width: 32px; height: 32px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  color: white; font-size: 1.2rem; line-height: 1; transition: background 0.2s;
+  color: white; font-size: 1rem; line-height: 1; transition: background 0.2s;
 }
-.promo-popup__close:hover { background: rgba(255,255,255,0.35); }
-.promo-popup__body {
-  padding: var(--s5) var(--s6);
+.promo-popup__close:hover { background: rgba(0,0,0,0.55); }
+
+/* Flashy orange-red banner */
+.promo-popup__banner {
+  background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+  padding: 18px 52px 16px 20px;
+  position: relative;
+  overflow: hidden;
 }
-.promo-popup__product {
-  font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: var(--s3);
+.promo-popup__banner::before {
+  content: '';
+  position: absolute; top: -30px; right: -20px;
+  width: 130px; height: 130px;
+  background: rgba(255,255,255,0.1); border-radius: 50%;
 }
-.promo-popup__product span { color: var(--blue-600); }
-.promo-popup__pricing {
-  display: flex; align-items: center; gap: var(--s4); margin-bottom: var(--s4);
+.promo-popup__banner::after {
+  content: '';
+  position: absolute; bottom: -20px; right: 50px;
+  width: 70px; height: 70px;
+  background: rgba(255,255,255,0.07); border-radius: 50%;
 }
-.promo-popup__was {
-  font-size: 1.1rem; color: var(--ink-muted); text-decoration: line-through;
+.promo-popup__banner-label {
+  display: inline-block;
+  background: rgba(255,255,255,0.25); color: white;
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 20px; margin-bottom: 5px;
 }
-.promo-popup__now {
-  font-size: 2.2rem; font-weight: 900; color: #1a54d2; line-height: 1;
+.promo-popup__banner-title {
+  display: block;
+  font-size: 2.1rem; font-weight: 900; color: white; line-height: 1;
+  letter-spacing: -0.01em;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.25);
 }
-.promo-popup__now sup { font-size: 1rem; font-weight: 700; vertical-align: top; margin-top: 4px; }
-.promo-popup__incl {
-  font-size: 0.78rem; color: var(--ink-muted); margin-bottom: var(--s4);
+.promo-popup__banner-sub {
+  font-size: 0.8rem; color: rgba(255,255,255,0.88); margin-top: 5px; font-weight: 500;
 }
-.promo-popup__incl strong { color: var(--ink); }
-.promo-popup__features {
-  display: flex; flex-direction: column; gap: var(--s2); margin-bottom: var(--s5);
+
+/* Full-width product image hero */
+.promo-popup__img-hero {
+  background: linear-gradient(160deg, #e8f0ff 0%, #d0e2ff 100%);
+  padding: 20px 24px 12px;
+  text-align: center;
+  position: relative;
 }
-.promo-popup__feature {
-  display: flex; align-items: center; gap: var(--s2);
-  font-size: 0.88rem; color: var(--ink);
+.promo-popup__img-hero img {
+  max-height: 210px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.15));
 }
-.promo-popup__feature::before {
-  content: "✓"; color: #22c55e; font-weight: 700; font-size: 1rem; flex-shrink: 0;
+.promo-popup__energy-badge {
+  display: inline-block;
+  background: #16a34a; color: white;
+  font-size: 0.68rem; font-weight: 900; letter-spacing: 0.05em;
+  padding: 4px 12px; border-radius: 4px; margin-top: 10px;
+}
+
+/* Pricing row: left (was/incl) + right (now price) */
+.promo-popup__pricing-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px;
+  background: #fafafa;
+  border-bottom: 2px solid #f0f0f0;
+  gap: 16px;
+}
+.promo-popup__pricing-left { flex: 1; }
+.promo-popup__pricing-right { text-align: right; flex-shrink: 0; }
+.promo-popup__was-row {
+  font-size: 0.85rem; color: #888; margin-bottom: 6px; font-weight: 500;
+}
+.promo-popup__was-row s { font-weight: 700; color: #999; }
+.promo-popup__incl-badge {
+  font-size: 0.75rem; font-weight: 600; color: #444; padding: 1px 0;
+}
+.promo-popup__now-label {
+  display: inline-block;
+  background: #16a34a; color: white;
+  font-size: 0.65rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 2px 9px; border-radius: 4px; margin-bottom: 2px;
+}
+.promo-popup__now-price {
+  font-size: 2.6rem; font-weight: 900; color: #f97316; line-height: 1;
+}
+.promo-popup__now-price sup {
+  font-size: 1.1rem; font-weight: 800; vertical-align: top; margin-top: 6px;
+}
+
+/* Blue credibility strip */
+.promo-popup__strip {
+  background: #1a54d2; color: white;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em;
+  padding: 9px 16px; text-align: center;
+}
+
+/* CTA area */
+.promo-popup__actions {
+  padding: 14px 20px 16px; background: white;
 }
 .promo-popup__cta {
-  display: block; width: 100%; padding: var(--s4) var(--s5);
-  background: #f97316; color: white; border: none; border-radius: var(--r-md);
+  display: block; width: 100%; padding: 14px var(--s5);
+  background: #f97316; color: white; border: none; border-radius: 8px;
   font-size: 1rem; font-weight: 700; cursor: pointer; text-align: center;
   text-decoration: none; transition: background 0.2s, transform 0.1s;
+  animation: pulse-glow 2s ease-in-out infinite;
 }
-.promo-popup__cta:hover { background: #ea6500; transform: translateY(-1px); }
+.promo-popup__cta:hover { background: #ea6500; transform: translateY(-1px); animation: none; }
 .promo-popup__dismiss {
-  display: block; text-align: center; margin-top: var(--s3);
-  font-size: 0.8rem; color: var(--ink-muted); cursor: pointer; background: none;
+  display: block; text-align: center; margin-top: 10px;
+  font-size: 0.78rem; color: var(--ink-muted); cursor: pointer; background: none;
   border: none; width: 100%; padding: 0; text-decoration: underline;
 }
 
@@ -1125,7 +1186,7 @@ button.ac-row:hover { background: rgba(0,0,0,0.03); border-radius: 6px; }
 /* ── Hero v2 (full-width photo background) ────────────────── */
 .hero-v2 {
   position: relative;
-  min-height: 600px;
+  min-height: calc(100svh - 180px);
   display: flex;
   align-items: center;
   overflow: hidden;

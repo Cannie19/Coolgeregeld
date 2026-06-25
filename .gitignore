@@ -34,3 +34,5 @@ preview*.jpg
 screenshot.mjs
 CLAUDE_Website.md
 PRODUCT.md
+
+.vercel

@@ -122,19 +122,17 @@
               <p style="color: var(--ink-muted); margin-top: var(--s3);">Vul het formulier in, dan nemen we zo snel mogelijk contact met u op. Verwachte reactietijd: binnen 24 uur.</p>
             </div>
 
-            <!-- ACTION: vervang REPLACE met uw Formspree ID -->
             <form
-              action="https://formspree.io/f/REPLACE"
+              action="https://api.web3forms.com/submit"
               method="POST"
               class="form js-contact-form reveal"
               novalidate
               aria-label="Contactformulier"
             >
-              <!-- Honeypot veld tegen spam -->
-              <div class="form-group form-group--honeypot" aria-hidden="true">
-                <label for="website">Website</label>
-                <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
-              </div>
+              <input type="hidden" name="access_key" value="e1a909af-529d-4c06-af2e-2045257eee07">
+              <input type="hidden" name="subject" value="Offerte aanvraag via coolgeregeld.nl">
+              <input type="hidden" name="from_name" value="Coolgeregeld Website">
+              <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
 
               <div class="form-row">
                 <div class="form-group">
