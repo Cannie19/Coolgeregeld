@@ -202,11 +202,19 @@ input, select, textarea { font: inherit; }
 
 .nav__mobile {
   display: none;
+  position: fixed; /* blijft onder de sticky nav, ook bij scrollen */
+  top: 110px;      /* = nav hoogte */
+  left: 0;
+  right: 0;
+  z-index: 99;
   flex-direction: column;
   background: white;
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
   padding: var(--s4) var(--s5);
   gap: 0;
+  max-height: calc(100svh - 110px);
+  overflow-y: auto;
 }
 .nav__mobile.is-open { display: flex; }
 .nav__mobile a {
@@ -1187,15 +1195,14 @@ button.ac-row:hover { background: rgba(0,0,0,0.03); border-radius: 6px; }
 /* ── Hero v2 (full-width photo background) ────────────────── */
 .hero-v2 {
   position: relative;
-  height: 100svh;
-  min-height: 560px;
   display: grid;
   grid-template-rows: 1fr auto; /* hero-inhoud groeit, strip blijft onderaan */
   margin-top: -110px; /* pull hero behind sticky nav so nav can be transparent */
 }
-/* Topbar is ~40px op desktop — hero 40px korter zodat strip in viewport blijft */
+/* Mobiel: natuurlijke hoogte zodat strip netjes ONDER de content valt (geen overlap).
+   Desktop: vaste hoogte (100svh - topbar) zodat strip exact op de viewport-bodem staat bij laden. */
 @media (min-width: 640px) {
-  .hero-v2 { height: calc(100svh - 40px); }
+  .hero-v2 { height: calc(100svh - 40px); min-height: 560px; }
 }
 .hero-v2__inner { align-self: center; }
 .hero-v2__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
