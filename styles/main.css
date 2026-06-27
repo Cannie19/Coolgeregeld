@@ -886,6 +886,18 @@ button.ac-row:hover { background: rgba(0,0,0,0.03); border-radius: 6px; }
 .openingstijden { display: flex; flex-direction: column; gap: var(--s1); }
 .openingstijden-row { display: flex; justify-content: space-between; font-size: var(--text-sm); padding: var(--s2) 0; border-bottom: 1px solid var(--border-light); }
 .openingstijden-row:last-child { border-bottom: none; }
+.wa-cta-block {
+  display: flex; gap: var(--s4);
+  background: #e7fbe7; border: 1px solid #bbf0bb; border-radius: var(--r-xl); padding: var(--s5);
+}
+.wa-cta-block__icon {
+  width: 44px; height: 44px;
+  background: var(--green-wa); border-radius: var(--r-lg);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white;
+}
+.wa-cta-block__icon svg { width: 24px; height: 24px; }
+.wa-cta-block h4 { font-weight: 700; margin-bottom: var(--s1); }
+.wa-cta-block p { font-size: var(--text-sm); color: var(--ink-muted); }
 
 /* ── Form ────────────────────────────────────────────────── */
 .form { display: flex; flex-direction: column; gap: var(--s5); }
@@ -959,6 +971,19 @@ button.ac-row:hover { background: rgba(0,0,0,0.03); border-radius: 6px; }
 .footer__legal { display: flex; gap: var(--s6); }
 .footer__legal a { font-size: var(--text-xs); color: rgba(255,255,255,0.3); transition: color 0.15s; }
 .footer__legal a:hover { color: rgba(255,255,255,0.65); }
+
+/* ── WhatsApp float ──────────────────────────────────────── */
+.whatsapp-btn {
+  position: fixed; bottom: var(--s6); right: var(--s6); z-index: 50;
+  width: 56px; height: 56px;
+  background: var(--green-wa); color: white;
+  border-radius: var(--r-full);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.45);
+  transition: transform 0.2s var(--ease-spring);
+}
+.whatsapp-btn:hover { transform: scale(1.1); }
+.whatsapp-btn svg { width: 30px; height: 30px; }
 
 /* ── Promo Popup ─────────────────────────────────────────── */
 .promo-overlay {
